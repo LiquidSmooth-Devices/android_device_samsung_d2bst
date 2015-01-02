@@ -1,5 +1,5 @@
-#
-# Copyright (C) 2011 The CyanogenMod Project
+# Copyright (C) 2012 The Android Open Source Project
+# Copyright (C) 2013 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,14 +14,8 @@
 # limitations under the License.
 #
 
-## (2) Also get non-open-source specific aspects if available
-$(call inherit-product-if-exists, vendor/samsung/d2spr/d2spr-vendor.mk)
+""" Custom OTA commands for d2bst """
 
-## Inherit d2bst overlays
-DEVICE_PACKAGE_OVERLAYS += device/samsung/d2bst/overlay
-
-# Inherit from d2-common
-$(call inherit-product, device/samsung/d2-common/d2-common.mk)
-
-PRODUCT_COPY_FILES += \
-    device/samsung/d2bst/rootdir/etc/apns-conf-boost.xml:system/etc/apns-conf-boost.xml
+def FullOTA_InstallEnd(info):
+  info.script.AppendExtra('run_program("/sbin/sh", "-c", "busybox rm -f /system/etc/apns-conf.xml");')
+  info.script.AppendExtra('run_program("/sbin/sh", "-c", "busybox mv /system/etc/apns-conf-boost.xml /system/etc/apns-conf.xml");')
