@@ -22,3 +22,8 @@ DEVICE_PACKAGE_OVERLAYS += device/samsung/d2bst/overlay
 
 # Inherit from d2-common
 $(call inherit-product, device/samsung/d2-common/d2-common.mk)
+
+PRODUCT_COPY_FILES += \
+    device/samsung/d2bst/rootdir/etc/apns-conf-boost.xml:system/etc/apns-conf-boost.xml \
+    device/samsung/d2bst/rootdir/data/eri-boost.xml:system/etc/eri-boost.xml \
+    device/samsung/d2bst/rootdir/data/preferred-apn1.xml:system/etc/preferred-apn1.xml
