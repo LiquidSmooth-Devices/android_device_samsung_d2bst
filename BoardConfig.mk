@@ -31,3 +31,4 @@ TARGET_OTA_ASSERT_DEVICE := d2bst,d2spr,d2spi,d2tfnspr,d2lte
 
 TARGET_BOARD_INFO_FILE ?= device/samsung/d2bst/board-info.txt
 
+TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/d2bst
