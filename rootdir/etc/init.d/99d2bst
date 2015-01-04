@@ -1,0 +1,6 @@
+#!/system/bin/sh
+#
+
+if [ -e /data/d2bst-firstboot.sh ]; then
+	sh /data/d2bst-firstboot.sh
+fi
