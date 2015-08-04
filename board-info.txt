@@ -1,2 +1,2 @@
-require version-bootloader=L710TVPU0ANF4|L710TVPU0AO3
+require version-bootloader=L710TVPU0ANF4|L710TVPU0AO3|L710TVPU0AOF2
 
